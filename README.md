@@ -1,4 +1,4 @@
-# #ThreeTierApp
+# ThreeTierApp
 
 ## Prerequisites
 
