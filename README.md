@@ -10,7 +10,7 @@
 ### Step 1: IAM Configuration
 
 - Create a user `eks-admin` with `AdministratorAccess`.
-- Generate Security Credentials: Access Key and Secret Access Key.
+- Generate Security Credentials: Access Key and Secret Access Key For Command Line InterFace.
 
 ### Step 2: EC2 Setup
 
@@ -24,7 +24,17 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 sudo apt install unzip
 unzip awscliv2.zip
 sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
+```
+
+```
 aws configure
+
+```
+
+-- Give Required Info in Prompt
+
+```
+aws --version
 ```
 
 ### Step 4: Install Docker
@@ -39,10 +49,15 @@ sudo chown $USER /var/run/docker.sock
 ### Step 5: Install kubectl
 
 ```shell
-curl -o kubectl https://amazon-eks.s3.us-east-1.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.17/2024-01-04/bin/linux/amd64/kubectl
+
+```
+
+```shell
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
+
 ```
 
 ### Step 6: Install eksctl
